@@ -34,7 +34,6 @@ def truncate(content, length=15, suffix='...'):
   else:
     return content[:length] + suffix
 
-
 class DocsSample(object):
   """A DocsSample object demonstrates the Document List feed."""
 
@@ -70,11 +69,10 @@ class DocsSample(object):
     print '\n'
     if not feed.entry:
       print 'No entries in feed.\n'
-    print '%-18s %-12s %s' % ('TITLE', 'TYPE', 'RESOURCE ID')
+    print '%s %-12s %s' % ('TITLE', 'TYPE', 'RESOURCE ID')
     for entry in feed.entry:
-      print '%-18s %-12s %s' % (truncate(entry.title.text.encode('UTF-8')),
-                                entry.GetDocumentType(),
-                                entry.resourceId.text)
+      print '%s %-12s %s' % ((entry.title.text.encode('UTF-8')),entry.GetDocumentType(),entry.resourceId.text)
+      #print '%s %-12s %s' % (truncate(entry.title.text.encode('UTF-8')),entry.GetDocumentType(),entry.resourceId.text)
 
   def _GetFileExtension(self, file_name):
     """Returns the uppercase file extension for a file.
@@ -181,9 +179,11 @@ class DocsSample(object):
       feed = self.gd_client.Query(query.ToUri())
     else:
       query = gdata.docs.service.DocumentQuery(categories=[category])
+      
       feed = self.gd_client.Query(query.ToUri())
-
+                
     self._PrintFeed(feed)
+
 
   def _ListAclPermissions(self):
     """Retrieves a list of a user's folders and displays them."""
