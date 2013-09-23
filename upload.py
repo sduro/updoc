@@ -83,3 +83,23 @@ uploader = gdata.client.ResumableUploader(docsclient, fh, file_type, file_size, 
 new_entry = uploader.UploadFile(uri, entry=gdata.data.GDEntry(title=atom.data.Title(text=os.path.basename(fh.name))))
 print 'success!'
 print 'Uploaded', '{0:.2f}'.format(file_size / 1024 / 1024) + ' MiB in ' + str(round(time.time() - t1, 2)) + ' seconds'
+
+def PrintResource(resource):
+  """Display a resource to Standard Out."""
+  print resource.resource_id.text, resource.GetResourceType()
+
+def PrintFeed(feed):
+  """Display a feed to Standard Out."""
+  for entry in feed.entry:
+    PrintResource(entry)
+    
+def GetMetadataSample():
+  """Get and display the Metadata for the current user."""
+  client = docsclient
+  # Fetch the metadata entry and display bits of it
+  metadata = client.GetMetadata()
+  print 'Quota'
+  print '  Total:', metadata.quota_bytes_total.text
+  print '  Used:', metadata.quota_bytes_used.text
+  print '  Trashed:', metadata.quota_bytes_used_in_trash.text
+
