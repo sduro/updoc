@@ -345,15 +345,3 @@ def main():
 
 if __name__ == '__main__':
   main()
-Hide details
-Change log
-5bd5d560b263 by v...@google.com on Jun 30, 2010   Diff
-Fixing file permissions for samples.  See
-http://code.google.com/p/gdata-python-
-client/issues/detail?id=135
-Go to: 	
-Older revisions
-All revisions of this file
-File info
-Size: 11285 bytes, 347 lines
-View raw file
