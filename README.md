@@ -6,7 +6,7 @@ Source: http://planzero.org/blog/2012/04/13/uploading_any_file_to_google_docs_wi
 
 Here's a sample of the output, where the file backup_2012-04-13.tar.bz2 was uploaded to the Backups collection:
 
-$ ./gupload.py backup_2012-04-13.tar.bz2 Backups
+=$ ./gupload.py backup_2012-04-13.tar.bz2 Backups
 
 Google Docs Upload Tool - v0.1 - http://planzero.org/
 o Logging in... success!
