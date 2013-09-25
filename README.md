@@ -6,14 +6,15 @@ Source: http://planzero.org/blog/2012/04/13/uploading_any_file_to_google_docs_wi
 
 Here's a sample of the output, where the file backup_2012-04-13.tar.bz2 was uploaded to the Backups collection:
 
-=$ ./gupload.py backup_2012-04-13.tar.bz2 Backups
+    $ ./gupload.py backup_2012-04-13.tar.bz2 Backups
 
 Google Docs Upload Tool - v0.1 - http://planzero.org/
+
 o Logging in... success!
 o Fetching collection ID... success!
 o Uploading file... success!
 Uploaded 11.72 MiB in 17.75 seconds
-$ 
+ 
 To use the script, all you need to do is fill in your username and password and make sure recent 
 versions of the gdata library and the magic module are installed (see the comments at the top of the 
 script for specifics). When you run the tool the collection name parameter is optional, if you don't 
