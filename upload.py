@@ -11,7 +11,9 @@
 
 # Imports
 from __future__ import division
-import sys, time, os.path, magic, atom.data, gdata.client, gdata.docs.client, gdata.docs.data
+#import sys, time, os.path, magic, atom.data, gdata.client, gdata.docs.client, gdata.docs.data
+#se quita el magic para que funcione en la raspi
+import sys, time, os.path,  atom.data, gdata.client, gdata.docs.client, gdata.docs.data
 
 # Settings
 username = ''
@@ -36,7 +38,8 @@ except IOError, e:
 
 # Get file size and type
 file_size = os.path.getsize(fh.name)
-file_type = magic.Magic(mime=True).from_file(fh.name)
+#file_type = magic.Magic(mime=True).from_file(fh.name)
+file_type = 'application'
 
 # Create a Google Docs client
 docsclient = gdata.docs.client.DocsClient(source='planzero-gupload-v0.1')
